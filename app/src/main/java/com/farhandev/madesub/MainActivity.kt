@@ -1,6 +1,7 @@
 package com.farhandev.madesub
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -49,7 +50,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 title = getString(R.string.app_name)
             }
             R.id.nav_fav ->{
-                startActivity(Intent(this, Class.forName("com.farhandev.madesub.favorite.FavoriteActivity")))
+                //startActivity(Intent(this, Class.forName("com.farhandev.madesub.favorite.FavoriteActivity")))
+                val uri = Uri.parse("madesub://favorite")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
         }
         if (fragment != null){
